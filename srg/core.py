@@ -167,7 +167,6 @@ class GoalEnv(Env):
   `achieved_goal` is the goal that it currently achieved instead. `observation` contains the
   actual observations of the environment as per usual.
   """
-
   def reset(self):
     # Enforce that each GoalEnv uses a Goal-compatible observation space.
     if not isinstance(self.observation_space, srg.spaces.Dict):
