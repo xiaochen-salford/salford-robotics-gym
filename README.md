@@ -1,1 +1,2 @@
-# Soft Robotics Lab
+# Salford Robotics Gym
+
