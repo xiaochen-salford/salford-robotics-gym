@@ -1,1 +1,1 @@
-from .fetch_env import FetchEnv
+from . import fetch_gym
