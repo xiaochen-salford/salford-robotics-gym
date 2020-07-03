@@ -62,8 +62,7 @@ class CartPoleEnv(gym.Env):
 
   metadata = {
       'render.modes': ['human', 'rgb_array'],
-      'video.frames_per_second': 50
-  }
+      'video.frames_per_second': 50 }
 
   def __init__(self):
     self.gravity = 9.8
@@ -86,7 +85,7 @@ class CartPoleEnv(gym.Env):
                       np.finfo(np.float32).max,
                       self.theta_threshold_radians * 2,
                       np.finfo(np.float32).max],
-                    dtype=np.float32)
+                    dtype=np.float32 )
 
     self.action_space = spaces.Discrete(2)
     self.observation_space = spaces.Box(-high, high, dtype=np.float32)

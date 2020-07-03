@@ -9,6 +9,15 @@ srg/core.py
 srg/error.py
 srg/logger.py
 srg/version.py
+srg/agents/__init__.py
+srg/agents/base_agent.py
+srg/agents/her_base.py
+srg/agents/trainer.py
+srg/agents/exploration_strategies/__init__.py
+srg/agents/exploration_strategies/base_exploration_strategy.py
+srg/agents/exploration_strategies/epsilon_greedy_exploration.py
+srg/agents/exploration_strategies/gaussian_exploration.py
+srg/agents/exploration_strategies/ou_noise_exploration.py
 srg/envs/__init__.py
 srg/envs/registration.py
 srg/envs/bullet3/__init__.py

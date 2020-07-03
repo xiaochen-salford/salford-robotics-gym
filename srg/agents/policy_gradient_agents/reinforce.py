@@ -2,12 +2,12 @@ import numpy as np
 import torch
 import torch.optim as optim
 from torch.distributions import Categorical
-from agents.Base_Agent import Base_Agent
+from ..base_agent import BaseAgent
 
-class REINFORCE(Base_Agent):
+class REINFORCE(BaseAgent):
     agent_name = "REINFORCE"
     def __init__(self, config):
-        Base_Agent.__init__(self, config)
+        BaseAgent.__init__(self, config)
         self.policy = self.create_NN(input_dim=self.state_size, output_dim=self.action_size)
         self.optimizer = optim.Adam(self.policy.parameters(), lr=self.hyperparameters["learning_rate"])
         self.episode_rewards = []

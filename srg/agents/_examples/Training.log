@@ -1,0 +1,14 @@
+2020-07-02 23:31:14,605 - srg.agents.base_agent - INFO - 0 -- CartPole
+2020-07-02 23:31:14,605 - srg.agents.base_agent - INFO - 1 -- DISCRETE
+2020-07-02 23:31:14,605 - srg.agents.base_agent - INFO - 2 -- 2
+2020-07-02 23:31:14,605 - srg.agents.base_agent - INFO - 3 -- None
+2020-07-02 23:31:14,605 - srg.agents.base_agent - INFO - 4 -- 4
+2020-07-02 23:31:14,605 - srg.agents.base_agent - INFO - 5 -- {'learning_rate': 0.05, 'linear_hidden_units': [20, 20], 'final_layer_activation': 'SOFTMAX', 'learning_iterations_per_round': 5, 'discount_rate': 0.99, 'batch_norm': False, 'clip_epsilon': 0.1, 'episodes_per_learning_round': 4, 'normalise_rewards': True, 'gradient_clipping_norm': 7.0, 'mu': 0.0, 'theta': 0.0, 'sigma': 0.0, 'epsilon_decay_rate_denominator': 1.0, 'clip_rewards': False}
+2020-07-02 23:31:14,605 - srg.agents.base_agent - INFO - 6 -- 195.0
+2020-07-02 23:31:14,605 - srg.agents.base_agent - INFO - 7 -- 100
+2020-07-02 23:31:14,605 - srg.agents.base_agent - INFO - 8 -- cuda:0
+2020-07-02 23:31:16,569 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.03326482  0.01838815 -0.03589346  0.02311107]
+2020-07-02 23:31:21,698 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.03326482  0.01838815 -0.03589346  0.02311107]
+2020-07-02 23:31:26,901 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.03326482  0.01838815 -0.03589346  0.02311107]
+2020-07-02 23:31:32,091 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.03326482  0.01838815 -0.03589346  0.02311107]
+2020-07-02 23:31:37,260 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.03326482  0.01838815 -0.03589346  0.02311107]

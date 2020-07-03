@@ -22,52 +22,52 @@ class Trainer:
     def create_agent_to_agent_group_dictionary(self):
         """Creates a dictionary that maps an agent to their wider agent group"""
         agent_to_agent_group_dictionary = {
-                "DQN": "DQN_Agents",
-                "DQN-HER": "DQN_Agents",
-                "DDQN": "DQN_Agents",
-                "DDQN with Prioritised Replay": "DQN_Agents",
-                "DQN with Fixed Q Targets": "DQN_Agents",
-                "Duelling DQN": "DQN_Agents",
-                "PPO": "Policy_Gradient_Agents",
-                "REINFORCE": "Policy_Gradient_Agents",
-                "Genetic_Agent": "Stochastic_Policy_Search_Agents",
-                "Hill Climbing": "Stochastic_Policy_Search_Agents",
-                "DDPG": "Actor_Critic_Agents",
-                "DDPG-HER": "Actor_Critic_Agents",
-                "TD3": "Actor_Critic_Agents",
-                "A2C": "Actor_Critic_Agents",
-                "A3C": "Actor_Critic_Agents",
-                "h-DQN": "h_DQN",
-                "SNN-HRL": "SNN_HRL",
-                "HIRO": "HIRO",
-                "SAC": "Actor_Critic_Agents",
-                "HRL": "HRL",
-                "Model_HRL": "HRL",
-                "DIAYN": "DIAYN",
-                "Dueling DDQN": "DQN_Agents"}
+            "DQN": "DQN_Agents",
+            "DQN-HER": "DQN_Agents",
+            "DDQN": "DQN_Agents",
+            "DDQN with Prioritised Replay": "DQN_Agents",
+            "DQN with Fixed Q Targets": "DQN_Agents",
+            "Duelling DQN": "DQN_Agents",
+            "PPO": "Policy_Gradient_Agents",
+            "REINFORCE": "Policy_Gradient_Agents",
+            "Genetic_Agent": "Stochastic_Policy_Search_Agents",
+            "Hill Climbing": "Stochastic_Policy_Search_Agents",
+            "DDPG": "Actor_Critic_Agents",
+            "DDPG-HER": "Actor_Critic_Agents",
+            "TD3": "Actor_Critic_Agents",
+            "A2C": "Actor_Critic_Agents",
+            "A3C": "Actor_Critic_Agents",
+            "h-DQN": "h_DQN",
+            "SNN-HRL": "SNN_HRL",
+            "HIRO": "HIRO",
+            "SAC": "Actor_Critic_Agents",
+            "HRL": "HRL",
+            "Model_HRL": "HRL",
+            "DIAYN": "DIAYN",
+            "Dueling DDQN": "DQN_Agents" }
         return agent_to_agent_group_dictionary
 
     def create_agent_to_color_dictionary(self):
         """Creates a dictionary that maps an agent to a hex color (for plotting purposes)
         See https://en.wikipedia.org/wiki/Web_colors and https://htmlcolorcodes.com/ for hex colors"""
         agent_to_color_dictionary = {
-                "DQN": "#0000FF",
-                "DQN with Fixed Q Targets": "#1F618D",
-                "DDQN": "#2980B9",
-                "DDQN with Prioritised Replay": "#7FB3D5",
-                "Dueling DDQN": "#22DAF3",
-                "PPO": "#5B2C6F",
-                "DDPG": "#800000",
-                "DQN-HER": "#008000",
-                "DDPG-HER": "#008000",
-                "TD3": "#E74C3C",
-                "h-DQN": "#D35400",
-                "SNN-HRL": "#800000",
-                "A3C": "#E74C3C",
-                "A2C": "#F1948A",
-                "SAC": "#1C2833",
-                "DIAYN": "#F322CD",
-                "HRL": "#0E0F0F"}
+            "DQN": "#0000FF",
+            "DQN with Fixed Q Targets": "#1F618D",
+            "DDQN": "#2980B9",
+            "DDQN with Prioritised Replay": "#7FB3D5",
+            "Dueling DDQN": "#22DAF3",
+            "PPO": "#5B2C6F",
+            "DDPG": "#800000",
+            "DQN-HER": "#008000",
+            "DDPG-HER": "#008000",
+            "TD3": "#E74C3C",
+            "h-DQN": "#D35400",
+            "SNN-HRL": "#800000",
+            "A3C": "#E74C3C",
+            "A2C": "#F1948A",
+            "SAC": "#1C2833",
+            "DIAYN": "#F322CD",
+            "HRL": "#0E0F0F" }
         return agent_to_color_dictionary
 
     def run_games_for_agents(self):
@@ -180,7 +180,7 @@ class Trainer:
 
         if self.config.show_solution_score:
             self.draw_horizontal_line_with_label(ax, y_value=self.config.environment.get_score_to_win(), x_min=0,
-                                        x_max=self.config.num_episodes_to_run * 1.02, label="Target \n score")
+                                                 x_max=self.config.num_episodes_to_run * 1.02, label="Target \n score")
 
     def get_y_limits(self, results):
         """Extracts the minimum and maximum seen y_values from a set of results"""
