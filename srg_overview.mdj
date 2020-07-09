@@ -72,7 +72,8 @@
 									"_parent": {
 										"$ref": "AAAAAAFy06giYTxa++s="
 									},
-									"name": "action"
+									"name": "action",
+									"type": ""
 								},
 								{
 									"_type": "UMLAttribute",
@@ -80,7 +81,8 @@
 									"_parent": {
 										"$ref": "AAAAAAFy06giYTxa++s="
 									},
-									"name": "observation"
+									"name": "observation",
+									"type": ""
 								}
 							],
 							"operations": [

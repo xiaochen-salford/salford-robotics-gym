@@ -21,16 +21,16 @@ class GraspEnv(GymEnv):
         # WIP
         self.robot.set_action(action)
         bullet.stepSimulation()
-        # observation = self.robot.get_observation()
-        # reward = self.compute_reward()
+        observation = self.robot.get_state()
+        reward = self.compute_reward()
         # reward 
-        # return observation, reward 
+        return observation, reward
 
     #TODO 
     def reset(self):
         pass
 
     #TODO 
-    def compute_reward(self, achieved_goal, goal, info):
+    def compute_reward(self, achieved_goal=None, goal=None, info=None):
         reward = 1
         return reward

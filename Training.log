@@ -1,109 +1,49 @@
-2020-07-03 14:24:15,926 - srg.agents.base_agent - INFO - 0 -- CartPole
-2020-07-03 14:24:15,926 - srg.agents.base_agent - INFO - 1 -- DISCRETE
-2020-07-03 14:24:15,926 - srg.agents.base_agent - INFO - 2 -- 2
-2020-07-03 14:24:15,926 - srg.agents.base_agent - INFO - 3 -- None
-2020-07-03 14:24:15,926 - srg.agents.base_agent - INFO - 4 -- 4
-2020-07-03 14:24:15,926 - srg.agents.base_agent - INFO - 5 -- {'learning_rate': 0.05, 'linear_hidden_units': [20, 20], 'final_layer_activation': 'SOFTMAX', 'learning_iterations_per_round': 5, 'discount_rate': 0.99, 'batch_norm': False, 'clip_epsilon': 0.1, 'episodes_per_learning_round': 4, 'normalise_rewards': True, 'gradient_clipping_norm': 7.0, 'mu': 0.0, 'theta': 0.0, 'sigma': 0.0, 'epsilon_decay_rate_denominator': 1.0, 'clip_rewards': False}
-2020-07-03 14:24:15,926 - srg.agents.base_agent - INFO - 6 -- 195.0
-2020-07-03 14:24:15,926 - srg.agents.base_agent - INFO - 7 -- 100
-2020-07-03 14:24:15,926 - srg.agents.base_agent - INFO - 8 -- cuda:0
-2020-07-03 14:24:17,395 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:24:20,796 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:24:24,041 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:24:27,389 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:24:30,680 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:24:33,924 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:24:37,240 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:24:40,560 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:24:43,810 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:24:47,294 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:24:51,093 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:24:54,409 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:24:57,899 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:25:01,399 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:25:04,788 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:25:08,203 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:25:11,674 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:25:15,061 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:25:18,516 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:25:21,975 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:25:25,342 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:25:28,732 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:25:32,266 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:25:35,691 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:25:39,204 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:25:42,716 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:25:46,230 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:25:49,654 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:25:53,148 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:25:56,640 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:26:00,167 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:26:03,708 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:26:07,222 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:26:10,735 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:26:14,293 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:26:17,809 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:26:21,251 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:26:24,805 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:26:28,415 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:26:31,959 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:26:35,541 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:26:39,099 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:26:42,672 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:26:46,240 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:26:49,805 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:26:53,372 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:26:56,897 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:27:00,357 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:27:03,929 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:27:07,480 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:27:11,000 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:27:14,535 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:27:18,082 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:27:21,603 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:27:25,178 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:27:28,713 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:27:32,262 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:27:35,885 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:27:39,438 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:27:42,943 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:27:46,449 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:27:50,034 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:27:53,561 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:27:57,034 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:28:00,565 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:28:04,164 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:28:07,688 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:28:11,255 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:28:14,825 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:28:18,342 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:28:21,922 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:28:25,479 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:28:29,017 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:28:32,469 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:28:36,030 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:28:39,606 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:28:43,086 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:28:46,633 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:28:50,202 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:28:53,756 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:28:57,256 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:29:00,830 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:29:04,384 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:29:07,922 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:29:11,489 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:29:15,092 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:29:18,624 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:29:22,128 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:29:25,695 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:29:29,302 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:29:32,848 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:29:36,373 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:29:39,931 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:29:43,492 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:29:47,057 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:29:50,638 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:29:54,182 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:29:57,772 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:30:01,367 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
-2020-07-03 14:30:04,907 - srg.agents.base_agent - INFO - Reseting game -- New start state [ 0.01734007 -0.04972776  0.04319602  0.02224187]
+2020-07-09 12:25:20,856 - srg.agents.base_agent_single - INFO - 0 -- Pose Learning
+2020-07-09 12:25:20,857 - srg.agents.base_agent_single - INFO - 1 -- CONTINUOUS
+2020-07-09 12:25:20,857 - srg.agents.base_agent_single - INFO - 2 -- 6
+2020-07-09 12:25:20,857 - srg.agents.base_agent_single - INFO - 3 -- -100
+2020-07-09 12:25:20,857 - srg.agents.base_agent_single - INFO - 4 -- 76
+2020-07-09 12:25:20,857 - srg.agents.base_agent_single - INFO - 5 -- {'learning_rate': 0.05, 'linear_hidden_units': [50, 50, 50], 'final_layer_activation': 'SOFTMAX', 'learning_iterations_per_round': 5, 'discount_rate': 0.99, 'batch_norm': False, 'clip_epsilon': 0.1, 'episodes_per_learning_round': 1, 'normalise_rewards': True, 'gradient_clipping_norm': 7.0, 'mu': 0.0, 'theta': 0.0, 'sigma': 0.0, 'epsilon_decay_rate_denominator': 1.0, 'clip_rewards': False}
+2020-07-09 12:25:20,858 - srg.agents.base_agent_single - INFO - 6 -- -1
+2020-07-09 12:25:20,858 - srg.agents.base_agent_single - INFO - 7 -- 100
+2020-07-09 12:25:20,858 - srg.agents.base_agent_single - INFO - 8 -- cuda:0
+2020-07-09 12:25:23,286 - srg.agents.base_agent_single - INFO - Reseting game -- New start state [1.       1.       1.       0.81725  0.19145  0.094509 0.       0.
+ 0.       0.       0.       0.       0.       0.       0.       0.
+ 0.       0.       0.       0.       0.       0.       0.       0.
+ 0.       0.       0.       0.       0.       0.       0.       0.
+ 0.       0.       0.       0.       0.       0.       0.       0.
+ 0.       0.       0.       0.       0.       0.       0.       0.
+ 0.       0.       0.       0.       0.       0.       0.       0.
+ 0.       0.       0.       0.       0.       0.       0.       0.
+ 0.       0.       0.       0.       0.       0.       0.       0.
+ 0.       0.       0.       0.      ]
+2020-07-09 12:25:25,863 - srg.agents.base_agent_single - INFO - Reseting game -- New start state [1.       1.       1.       0.81725  0.19145  0.094509 0.       0.
+ 0.       0.       0.       0.       0.       0.       0.       0.
+ 0.       0.       0.       0.       0.       0.       0.       0.
+ 0.       0.       0.       0.       0.       0.       0.       0.
+ 0.       0.       0.       0.       0.       0.       0.       0.
+ 0.       0.       0.       0.       0.       0.       0.       0.
+ 0.       0.       0.       0.       0.       0.       0.       0.
+ 0.       0.       0.       0.       0.       0.       0.       0.
+ 0.       0.       0.       0.       0.       0.       0.       0.
+ 0.       0.       0.       0.      ]
+2020-07-09 12:25:28,298 - srg.agents.base_agent_single - INFO - Reseting game -- New start state [1.       1.       1.       0.81725  0.19145  0.094509 0.       0.
+ 0.       0.       0.       0.       0.       0.       0.       0.
+ 0.       0.       0.       0.       0.       0.       0.       0.
+ 0.       0.       0.       0.       0.       0.       0.       0.
+ 0.       0.       0.       0.       0.       0.       0.       0.
+ 0.       0.       0.       0.       0.       0.       0.       0.
+ 0.       0.       0.       0.       0.       0.       0.       0.
+ 0.       0.       0.       0.       0.       0.       0.       0.
+ 0.       0.       0.       0.       0.       0.       0.       0.
+ 0.       0.       0.       0.      ]
+2020-07-09 12:25:30,834 - srg.agents.base_agent_single - INFO - Reseting game -- New start state [1.       1.       1.       0.81725  0.19145  0.094509 0.       0.
+ 0.       0.       0.       0.       0.       0.       0.       0.
+ 0.       0.       0.       0.       0.       0.       0.       0.
+ 0.       0.       0.       0.       0.       0.       0.       0.
+ 0.       0.       0.       0.       0.       0.       0.       0.
+ 0.       0.       0.       0.       0.       0.       0.       0.
+ 0.       0.       0.       0.       0.       0.       0.       0.
+ 0.       0.       0.       0.       0.       0.       0.       0.
+ 0.       0.       0.       0.       0.       0.       0.       0.
+ 0.       0.       0.       0.      ]

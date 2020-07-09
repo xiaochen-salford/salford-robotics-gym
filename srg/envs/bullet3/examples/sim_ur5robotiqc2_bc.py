@@ -1,6 +1,7 @@
 import os
 import pybullet as bullet
 import pybullet_data
+import pybullet_utils.bullet_client as bc
 
 from collections import namedtuple
 from attrdict import AttrDict
@@ -12,7 +13,7 @@ def control_gripper(robot, parent, children, mul, **kwargs):
     if control_mode == bullet.POSITION_CONTROL:
         pose = kwargs.pop("targetPosition")
         # move parent joint
-        bullet.setJointMotorControl2(
+        phyx_client.setJointMotorControl2(
             robot, parent.id, control_mode, target_position=pose, 
             force=parent.maxForce, maxVelocity=parent.maxVelocity)
 
@@ -20,7 +21,7 @@ def control_gripper(robot, parent, children, mul, **kwargs):
         for name in children:
             child = children[name]
             child_pose = pose * mul[child.name]
-            bullet.setJointMotorControl2(
+            phyx_client.setJointMotorControl2(
                 robot, child.id, control_mode, targetPosition=child_pose, 
                 force=child.maxForce, maxVelocity=child.maxVelocity) 
 
@@ -57,7 +58,7 @@ def setup_sisbot(bullet, robot):
                 joint_lower_limit, joint_upper_limit, 
                 joint_max_force, joint_max_velocity,controllable)
         if info.type=="REVOLUTE": # set revolute joint to static
-            bullet.setJointMotorControl2(robot, info.id, bullet.VELOCITY_CONTROL, targetVelocity=0, force=0)
+            phyx_client.setJointMotorControl2(robot, info.id, bullet.VELOCITY_CONTROL, targetVelocity=0, force=0)
             joints[info.name] = info
 
     mimic_parent_name = "robotiq_85_left_knuckle_joint"
@@ -74,8 +75,11 @@ def setup_sisbot(bullet, robot):
     return joints, control_robotiq_c2, control_joints, mimic_parent_name
 
 
-phyx_client = bullet.connect(bullet.GUI)
-bullet.setAdditionalSearchPath(pybullet_data.getDataPath())
+# phyx_client = bullet.connect(bullet.GUI)
+# phyx_client = bc.BulletClient(bullet.GUI)
+# phyx_client = bc.BulletClient(bullet.GUI)
+phyx_client = bc.BulletClient(connection_mode=bullet.DIRECT)
+phyx_client.setAdditionalSearchPath(pybullet_data.getDataPath())
 
 curr_dir = os.path.dirname(os.path.realpath(__file__))
 sisbot_model_path = curr_dir+"/../models/mdl_ur5robotiqc2.urdf"
@@ -86,8 +90,8 @@ robot_start_pos = [0,0,0]
 robot_start_orn =bullet.getQuaternionFromEuler([0,0,0])
 print("----------------------------------------")
 print("Loading robot from {}".format(sisbot_model_path))
-robot = bullet.loadURDF(sisbot_model_path, robot_start_pos, robot_start_orn, flags=bullet.URDF_USE_INERTIA_FROM_FILE)
-plane = bullet.loadURDF(plane_model_path)
+robot = phyx_client.loadURDF(sisbot_model_path, robot_start_pos, robot_start_orn, flags=bullet.URDF_USE_INERTIA_FROM_FILE)
+plane = phyx_client.loadURDF(plane_model_path)
 joints, control_robotiq_c2, control_joints, mimic_parent_name = setup_sisbot(bullet, robot)
 eef_id = 7 # ee_link
 
@@ -106,16 +110,19 @@ try:
         y = bullet.readUserDebugParameter(y_in)
         z = bullet.readUserDebugParameter(z_in)
 
-        joint_pose = bullet.calculateInverseKinematics(robot, eef_id, [x,y,z])
+        joint_pose = phyx_client.calculateInverseKinematics(robot, eef_id, [x,y,z])
         for i, name in enumerate(control_joints):
             joint = joints[name]
             pose = joint_pose[i]
-            rXYZ = bullet.getLinkState(robot, eef_id)[0] # real XYZ
-            joint_states = bullet.getJointStates(robot, range(3))
+            # rXYZ = bullet.getLinkState(robot, eef_id)[0] # real XYZ
+            rXYZ = phyx_client.getLinkState(robot, eef_id)[0] # real XYZ
+
+            # joint_states = bullet.getJointStates(robot, range(3))
+            joint_states = phyx_client.getJointStates(robot, range(3))
             print("x_err= {:.2f}, y_err= {:.2f}, z_err= {:.2f}".format(*list(map(ABSE,[x,y,z],rXYZ))))
 
-        bullet.stepSimulation()
-    bullet.disconnect()
+        phyx_client.stepSimulation()
+    phyx_client.disconnect()
 except:
-    bullet.disconnect()
+    phyx_client.disconnect()
 

@@ -1,1 +1,1 @@
-from . import fetch_gym
+from . import gyms

@@ -11,8 +11,10 @@ srg/logger.py
 srg/version.py
 srg/agents/__init__.py
 srg/agents/base_agent.py
+srg/agents/base_agent_single.py
 srg/agents/her_base.py
 srg/agents/trainer.py
+srg/agents/trainer_single.py
 srg/agents/exploration_strategies/__init__.py
 srg/agents/exploration_strategies/base_exploration_strategy.py
 srg/agents/exploration_strategies/epsilon_greedy_exploration.py
@@ -25,8 +27,9 @@ srg/envs/bullet3/gym_env.py
 srg/envs/bullet3/robot_env.py
 srg/envs/bullet3/rotations.py
 srg/envs/bullet3/utils.py
-srg/envs/bullet3/fetch_gym/__init__.py
-srg/envs/bullet3/fetch_gym/grasp.py
+srg/envs/bullet3/gyms/__init__.py
+srg/envs/bullet3/gyms/grasp.py
+srg/envs/bullet3/gyms/pose.py
 srg/envs/bullet3/robots/__init__.py
 srg/envs/bullet3/robots/ur5robotiq2c.py
 srg/envs/classic/__init__.py

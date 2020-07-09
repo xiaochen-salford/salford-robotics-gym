@@ -16,23 +16,18 @@ class RobotUR5RobotiqC2_Config:
     self.model_path = curr_dir + '/../models/mdl_ur5robotiqc2.urdf'
 
     self.joint_types = ["REVOLUTE", "PRISMATIC", "SPHERICAL", "PLANAR", "FIXED"] 
-    self.joint_info = namedtuple\
-    (
-      "joint_info", 
-      [
-        "idx", "name", "type", "lower_limit", "upper_limit", "max_force", "max_velocity",
-        "controllable"
-      ]
-    ) 
+    self.joint_info = namedtuple(
+        "joint_info", 
+        ["idx", "name", "type", "lower_limit", "upper_limit", "max_force", "max_velocity",
+         "controllable" ] ) 
     
-    self.orderred_joints = \
-    [
-      "shoulder_pan_joint",
-      "shoulder_lift_joint",
-      "elbow_joint", 
-      "wrist_1_joint", "wrist_2_joint", "wrist_3_joint",
-      "robotiq_85_left_knuckle_joint" 
-    ]
+    self.orderred_joints = ["shoulder_pan_joint", 
+                            "shoulder_lift_joint", 
+                            "elbow_joint", 
+                            "wrist_1_joint", 
+                            "wrist_2_joint", 
+                            "wrist_3_joint", 
+                            "robotiq_85_left_knuckle_joint" ]
 
     self.orderred_joint_indices = range(len(self.orderred_joints))
 
