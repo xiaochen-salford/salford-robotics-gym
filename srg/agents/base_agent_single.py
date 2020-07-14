@@ -14,7 +14,10 @@ from torch.optim import optimizer
 class BaseAgentSingle:
 
     def __init__(self, config):
-        self.logger = self.setup_logger()
+        if 'file_to_save_training_log' in config.__dict__:
+            self.logger = self.setup_logger(config.file_to_save_training_log)
+        else:
+            self.logger = self.setup_logger()
         self.debug_mode = config.debug_mode
         # if self.debug_mode: self.tensorboard = SummaryWriter()
         self.config = config
@@ -111,9 +114,12 @@ class BaseAgentSingle:
         try: return self.environment.unwrapped.trials
         except AttributeError: return self.environment.spec.trials
 
-    def setup_logger(self):
+    def setup_logger(self, file_to_save=None):
         """Sets up the logger"""
-        filename = "Training.log"
+        if file_to_save is not None:
+            filename = file_to_save
+        else:
+            filename = "training.log"
         try: 
             if os.path.isfile(filename): 
                 os.remove(filename)
@@ -133,9 +139,15 @@ class BaseAgentSingle:
 
     def log_game_info(self):
         """Logs info relating to the game"""
-        for ix, param in enumerate([self.environment_title, self.action_types, self.action_size, self.lowest_possible_episode_score,
-                      self.state_size, self.hyperparameters, self.average_score_required_to_win, self.rolling_score_window,
-                      self.device]):
+        for ix, param in enumerate([self.environment_title, 
+                                    self.action_types, 
+                                    self.action_size, 
+                                    self.lowest_possible_episode_score, 
+                                    self.state_size, 
+                                    self.hyperparameters, 
+                                    self.average_score_required_to_win, 
+                                    self.rolling_score_window, 
+                                    self.device] ):
             self.logger.info("{} -- {}".format(ix, param))
 
     def set_random_seeds(self, random_seed):
@@ -276,15 +288,19 @@ class BaseAgentSingle:
 
     def save_experience(self, memory=None, experience=None):
         """Saves the recent experience to the memory buffer"""
-        if memory is None: memory = self.memory
-        if experience is None: experience = self.state, self.action, self.reward, self.next_state, self.done
-        memory.add_experience(*experience)
+        if memory is None: 
+            memory = self.memory
+        if experience is None: 
+            experience = self.state, self.action, self.reward, self.next_state, self.done
+        with torch.autograd.set_detect_anomaly(True):
+            memory.add_experience(*experience)
 
     def take_optimisation_step(self, optimizer, network, loss, clipping_norm=None, retain_graph=False):
         """Takes an optimisation step by calculating gradients given the loss and then updating the parameters"""
         if not isinstance(network, list): network = [network]
         optimizer.zero_grad() #reset gradients to 0
-        loss.backward(retain_graph=retain_graph) #this calculates the gradients
+        with torch.autograd.set_detect_anomaly(True):
+            loss.backward(retain_graph=retain_graph) #this calculates the gradients
         self.logger.info("Loss -- {}".format(loss.item()))
         if self.debug_mode: self.log_gradient_and_weight_information(network, optimizer)
         if clipping_norm is not None:
@@ -324,7 +340,7 @@ class BaseAgentSingle:
         default_hyperparameter_choices = {"output_activation": None, "hidden_activations": "relu", "dropout": 0.0,
                                           "initialiser": "default", "batch_norm": False,
                                           "columns_of_data_to_be_embedded": [],
-                                          "embedding_dimensions": [], "y_range": ()}
+                                          "embedding_dimensions": [], "y_range": () }
 
         for key in default_hyperparameter_choices:
             if key not in hyperparameters.keys():

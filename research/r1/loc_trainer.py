@@ -39,6 +39,7 @@ class PoseTrainer:
             "TD3": "Actor_Critic_Agents",
             "A2C": "Actor_Critic_Agents",
             "A3C": "Actor_Critic_Agents",
+            'PoseSAC': 'Actor_Critic_Agents',
             "h-DQN": "h_DQN",
             "SNN-HRL": "SNN_HRL",
             "HIRO": "HIRO",
@@ -69,6 +70,7 @@ class PoseTrainer:
             "A3C": "#E74C3C",
             "A2C": "#F1948A",
             "SAC": "#1C2833",
+            "PoseSAC": "#1C2833",
             "DIAYN": "#F322CD",
             "HRL": "#0E0F0F" }
         return agent_to_color_dictionary
@@ -121,7 +123,7 @@ class PoseTrainer:
             game_scores, rolling_scores, time_taken = agent.run_n_episodes()
             print("Time taken: {}".format(time_taken), flush=True)
             self.print_two_empty_lines()
-            agent_results.append([game_scores, rolling_scores, len(rolling_scores), -1 * max(rolling_scores), time_taken])
+            agent_results.append([game_scores, rolling_scores, len(rolling_scores), -1*max(rolling_scores), time_taken])
             if self.config.visualise_individual_results:
                 self.visualise_overall_agent_results([rolling_scores], agent_name, show_each_run=True)
                 plt.show()

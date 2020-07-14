@@ -4,6 +4,7 @@ from torch.distributions.normal import Normal
 
 class GaussianExploration(BaseExplorationStrategy):
     """Gaussian noise exploration strategy"""
+
     def __init__(self, config):
         super().__init__(config)
         self.action_noise_std = self.config.hyperparameters["action_noise_std"]

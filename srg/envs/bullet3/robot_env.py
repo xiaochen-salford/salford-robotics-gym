@@ -6,7 +6,7 @@ class RobotEnv:
     The base class for all robots 
     RobotEnv is sub-env for GymEnv; it is used to specify a robot and sould be attached to RobotEnv
     """
-    def __init__(self, config, initial_pos, inital_orn):
+    def __init__(self, config, initial_pos, initial_orn):
         model_path = config.model_path
         if model_path.startswith('/'):
             fullpath = model_path
@@ -15,7 +15,8 @@ class RobotEnv:
         if not os.path.exists(fullpath):
             raise IOError('File {} does not found'.format(fullpath))
 
-        self.id = bullet.loadURDF(fullpath, initial_pos, inital_orn, flags=bullet.URDF_USE_INERTIA_FROM_FILE)
+        self.id = bullet.loadURDF(fullpath)
+        # self.id = bullet.loadURDF(fullpath, initial_pos, initial_orn, flags=bullet.URDF_USE_INERTIA_FROM_FILE)
         for idx in range(config.joints_num):
             bullet.enableJointForceTorqueSensor(self.id, idx, enableSensor=True)
 

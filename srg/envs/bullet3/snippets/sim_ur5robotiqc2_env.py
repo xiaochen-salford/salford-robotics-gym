@@ -31,11 +31,12 @@ if __name__ == '__main__':
             # action['arm'] = [pi/4, 0, 0, 0, 0, 0]
             action['arm'] = [0, 0, pi/4, 0, 0, pi/3]
 
-            ob, reward, done = env.step(action, goal)
+            ob, _, _, _ = env.step(action, goal)
             num -= 1
             if num == 0:
                 num = 10000
                 env.reset()
+
 
             # pdb.set_trace()    
         bullet.disconnect()

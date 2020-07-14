@@ -4,18 +4,28 @@ from ..gym_env import GymEnv
 from ..robots import RobotUR5RobotiqC2
 import pybullet as bullet
 import numpy as np
+import math
 from numpy.linalg import norm
 from gym.utils import seeding
 from gym.spaces import Box, Dict
+
 
 class PoseEnv(GymEnv):
 
     def __init__(self):
         GymEnv.__init__(self)
         self.client_id = bullet.connect(bullet.GUI)
+        # self.reset()
         bullet.setTimeStep(0.01)
         self.robot = RobotUR5RobotiqC2()
-        self.ee_goal_pos = np.array([1.0, 1.0, 1.0])
+        bullet.setGravity(0.0, 0.0, -9.81)
+        self.ee_goal_pos = np.array([0.0, 0.0, -1.000])
+        # self.ee_goal_pos = np.array([0.0, 0.0, -0.500])
+        # self.ee_goal_pos = np.array([1.0, 0.0, 0.000])
+        # self.ee_goal_pos = np.array([0.0, 0.0, 1.000])
+        # self.ee_goal_pos = np.array([-.017, 0.192, 0.000])
+        # self.ee_goal_pos = np.array([0.03, 0.03, 0.03])
+        # self.ee_goal_pos = np.array([2.0, 2.0, 2.0])
         self.env_state = self.ee_goal_pos 
         self.goal_state_size = self.ee_goal_pos.size
         self.action_size = self.get_action_size()
@@ -26,7 +36,8 @@ class PoseEnv(GymEnv):
         self.buffer_length = 500
         self.buffer = np.zeros(self.buffer_length)
         self.steps_num = 0
-        self.step_stop_num = 1000
+        self.step_stop_num = 500
+        self._max_episode_steps = self.step_stop_num
         self.seed()
     
     def init_action_space(self):
@@ -73,13 +84,14 @@ class PoseEnv(GymEnv):
         
     def reset(self):
         self.steps_num = 0
-        bullet.resetSimulation()
+        # bullet.resetSimulation()
+        # bullet.setTimeStep(0.01)
         # bullet.connect(bullet.GUI)
         # bullet.setPhysicsEngineParameter(numSolverIterations=150)
-        delattr(self, 'robot')
-        self.robot = RobotUR5RobotiqC2()
-
-        init_state = self.robot.get_state()
+        # delattr(self, 'robot')
+        # self.robot = RobotUR5RobotiqC2()
+        init_state = self.robot.reset()
+        # init_state = self.robot.get_state()
         init_state = np.append(self.ee_goal_pos, init_state) 
         return init_state
 
@@ -88,8 +100,12 @@ class PoseEnv(GymEnv):
         The reward depends on how closely the robot reachs the desired pose 
         and how long it holds this pose
         """
-        np.roll(self.buffer, -1) # Roll towwards left
-        self.buffer[-1] = -norm(goal-achieved_goal) # The first element becomes the  
-                                                    # the last. Replace it with 
-                                                    # the latest sample 
-        return self.buffer.mean()
+        # np.roll(self.buffer, -1) # Roll towwards left
+        # self.buffer[-1] = -norm(goal-achieved_goal) # The first element becomes the  
+        #                                             # the last. Replace it with 
+        #                                             # the latest sample 
+        # return self.buffer.mean()
+
+        # return 1/norm(goal-achieved_goal)
+        # return -norm(goal-achieved_goal)
+        return math.exp(-norm(goal-achieved_goal))

@@ -1,0 +1,41 @@
+2020-07-13 04:08:52,316 - srg.agents.base_agent_single - INFO - 0 -- Pose Learning
+2020-07-13 04:08:52,317 - srg.agents.base_agent_single - INFO - 1 -- CONTINUOUS
+2020-07-13 04:08:52,318 - srg.agents.base_agent_single - INFO - 2 -- 6
+2020-07-13 04:08:52,318 - srg.agents.base_agent_single - INFO - 3 -- -100
+2020-07-13 04:08:52,318 - srg.agents.base_agent_single - INFO - 4 -- 76
+2020-07-13 04:08:52,319 - srg.agents.base_agent_single - INFO - 5 -- {'Actor': {'learning_rate': 0.0003, 'linear_hidden_units': [64, 64, 32], 'final_layer_activation': None, 'batch_norm': False, 'tau': 0.005, 'gradient_clipping_norm': 5, 'initialiser': 'Xavier'}, 'Critic': {'learning_rate': 0.0003, 'linear_hidden_units': [64, 64, 32], 'final_layer_activation': None, 'batch_norm': False, 'buffer_size': 1000000, 'tau': 0.005, 'gradient_clipping_norm': 5, 'initialiser': 'Xavier'}, 'min_steps_before_learning': 400, 'batch_size': 4, 'discount_rate': 0.99, 'mu': 0.0, 'theta': 0.15, 'sigma': 0.25, 'action_noise_std': 0.2, 'action_noise_clipping_range': 0.5, 'update_every_n_steps': 1, 'learning_updates_per_learning_session': 1, 'automatically_tune_entropy_hyperparameter': True, 'entropy_term_weight': None, 'add_extra_noise': False, 'do_evaluation_iterations': True, 'clip_rewards': False}
+2020-07-13 04:08:52,319 - srg.agents.base_agent_single - INFO - 6 -- -1
+2020-07-13 04:08:52,319 - srg.agents.base_agent_single - INFO - 7 -- 100
+2020-07-13 04:08:52,319 - srg.agents.base_agent_single - INFO - 8 -- cuda:0
+2020-07-13 04:08:54,706 - srg.agents.base_agent_single - INFO - Reseting game -- New start state [-0.017     0.192     0.        0.81725   0.19145  -0.005491  0.
+  0.        0.        0.        0.        0.        0.        0.
+  0.        0.        0.        0.        0.        0.        0.
+  0.        0.        0.        0.        0.        0.        0.
+  0.        0.        0.        0.        0.        0.        0.
+  0.        0.        0.        0.        0.        0.        0.
+  0.        0.        0.        0.        0.        0.        0.
+  0.        0.        0.        0.        0.        0.        0.
+  0.        0.        0.        0.        0.        0.        0.
+  0.        0.        0.        0.        0.        0.        0.
+  0.        0.        0.        0.        0.        0.      ]
+2020-07-13 04:08:55,772 - srg.agents.base_agent_single - INFO - Reseting game -- New start state [-1.70000000e-02  1.92000000e-01  0.00000000e+00  8.17250000e-01
+  1.91450000e-01 -5.49100000e-03  0.00000000e+00  0.00000000e+00
+  0.00000000e+00  0.00000000e+00  0.00000000e+00  0.00000000e+00
+  0.00000000e+00  0.00000000e+00  0.00000000e+00  0.00000000e+00
+  0.00000000e+00  0.00000000e+00  0.00000000e+00  0.00000000e+00
+  0.00000000e+00  0.00000000e+00  7.68501754e+03  1.21732077e+03
+  3.67282098e+03 -3.00969690e+03 -1.80626378e+03  6.95838941e+03
+ -3.60567053e+03 -6.89496226e+03  3.63358098e+03 -2.69906433e+02
+  3.81460675e+03  2.10984009e+02  4.99900211e+03 -6.89496226e+03
+  9.75340922e+02  3.86968815e+03 -2.57240797e+03 -3.00093369e+03
+ -1.15452906e+03 -9.47612127e+03  6.06511504e+03  2.18014554e+03
+ -1.71136773e+03  1.65135967e+03  1.44292156e+03 -1.17914141e+04
+  6.57126536e+03  4.78197924e+02  2.00000000e+03  1.69278050e+03
+ -1.24207715e+04 -6.43713341e+03  7.13622115e+03  1.80559328e+03
+  5.16105444e+02  2.00000000e+03  1.34837078e+04 -9.21917839e+03
+ -7.84973693e+03 -8.93857024e+02  2.00000000e+03 -2.03331446e+03
+ -2.48845336e+02 -6.46106780e+02 -5.79282584e+02  2.34785432e+00
+  2.32194665e-01 -7.34967559e-01  1.05460205e+02 -5.86266479e+02
+ -1.00000000e+03  1.00000000e+03  1.00000000e+03  1.00000000e+03]
+2020-07-13 04:08:55,811 - srg.agents.base_agent_single - INFO - Loss -- 22640282.0
+2020-07-13 04:08:55,820 - srg.agents.base_agent_single - INFO - Loss -- 14516915.0

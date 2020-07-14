@@ -79,7 +79,7 @@ class RobotUR5RobotiqC2Config:
 
 
 # working in progress...
-class RobotUR5RobotiqC2(RobotEnv):
+class RobotUR5RobotiqC2_Var1(RobotEnv):
 
     def __init__(self, initial_pos=[0,0,0], 
                  initial_orn=bullet.getQuaternionFromEuler([0,0,0])):
@@ -145,10 +145,7 @@ class RobotUR5RobotiqC2(RobotEnv):
             bullet.setJointMotorControlArray(self.id, 
                                              self.config.arm_active_joint_indices, 
                                              bullet.POSITION_CONTROL, 
-                                             targetPositions=action.tolist(), 
-                                             forces=[1000.]*6 )
-                                            #  bullet.TORQUE_CONTROL, 
-                                            #  forces=action.tolist() )
+                                             targetPositions=action.tolist() )
             self.prev_action = self.curr_action
             self.curr_action = action
 

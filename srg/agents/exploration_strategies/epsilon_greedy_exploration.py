@@ -5,6 +5,7 @@ import torch
 
 class Epsilon_Greedy_Exploration(BaseExplorationStrategy):
     """Implements an epsilon greedy exploration strategy"""
+
     def __init__(self, config):
         super().__init__(config)
         self.notified_that_exploration_turned_off = False
@@ -52,8 +53,8 @@ class Epsilon_Greedy_Exploration(BaseExplorationStrategy):
         max_epsilon = 0.5
         min_epsilon = 0.001
         increment = (max_epsilon - min_epsilon) / float(self.exploration_cycle_episodes_length / 2)
-        cycle = [ix for ix in range(int(self.exploration_cycle_episodes_length / 2))] + [ix for ix in range(
-            int(self.exploration_cycle_episodes_length / 2), 0, -1)]
+        cycle = [ix for ix in range(int(self.exploration_cycle_episodes_length / 2))] \
+                + [ix for ix in range(int(self.exploration_cycle_episodes_length / 2), 0, -1)]
         cycle_ix = episode_number % self.exploration_cycle_episodes_length
         epsilon = max_epsilon - cycle[cycle_ix] * increment
         return epsilon

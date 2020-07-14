@@ -7,7 +7,6 @@ from gym import wrappers
 import numpy as np
 import matplotlib.pyplot as plt
 
-
 class TrainerSingle:
     """Runs games for given agents. Optionally will visualise and save the results"""
 

@@ -13,6 +13,7 @@ from srg.agents.utilities.Utility_Functions import create_actor_distribution
 
 class Single_Experience_Generator(object):
     """ Plays n episode in parallel using a fixed agent. Only works for PPO or DDPG type agents at the moment, not Q-learning agents"""
+
     def __init__(self, environment, policy, seed, hyperparameters, action_size, use_GPU=False, action_choice_output_columns=None):
         self.use_GPU = use_GPU
         self.environment =  environment
@@ -22,11 +23,23 @@ class Single_Experience_Generator(object):
         self.action_choice_output_columns = action_choice_output_columns
         self.hyperparameters = hyperparameters
         if self.action_types == "CONTINUOUS": 
-            self.noise = OU_Noise(self.action_size, seed, self.hyperparameters["mu"],
-                                  self.hyperparameters["theta"], self.hyperparameters["sigma"])
+            self.noise = OU_Noise(self.action_size, seed, 
+                                  self.hyperparameters["mu"],
+                                  self.hyperparameters["theta"], 
+                                  self.hyperparameters["sigma"] )
 
-    def play_n_episodes(self, n=1, exploration_epsilon=None):
-        raise NotImplementedError
+    def play_n_episodes(self, n, exploration_epsilon=None):
+        """Plays n episodes in sequential using the fixed policy and returns the data"""
+        self.exploration_epsilon = exploration_epsilon
+        states_for_all_episodes = []
+        actions_for_all_episodes = []
+        rewards_for_all_episodes = []
+        for _ in range(n):
+            episode = self(exploration_epsilon)
+            states_for_all_episodes.append(episode[0])
+            actions_for_all_episodes.append(episode[1])
+            rewards_for_all_episodes.append(episode[2])
+        return states_for_all_episodes, actions_for_all_episodes, rewards_for_all_episodes
 
     def __call__(self, n):
         exploration = max(0.0, random.uniform(self.exploration_epsilon / 3.0, self.exploration_epsilon * 3.0))
@@ -48,7 +61,7 @@ class Single_Experience_Generator(object):
             episode_actions.append(action)
             episode_rewards.append(reward)
             state = next_state
-        return [episode_states], [episode_actions], [episode_rewards]
+        return episode_states, episode_actions, episode_rewards
 
     def reset_game(self):
         """Resets the game environment so it is ready to play a new episode"""
@@ -59,6 +72,7 @@ class Single_Experience_Generator(object):
             self.noise.reset()
         return state
 
+    PI = 3.1415026
     def pick_action(self, policy, state, epsilon_exploration=None):
         """Picks an action using the policy"""
         if self.action_types == "DISCRETE":
@@ -68,6 +82,16 @@ class Single_Experience_Generator(object):
 
         state = torch.from_numpy(state).float().unsqueeze(0)
         actor_output = policy.forward(state) # FIX IT
+        # means = torch.clamp(actor_output[:,0:self.environment.get_action_size()], min=-1000, max=1000)
+        # stds = torch.clamp(actor_output[:, self.environment.get_action_size():], min=-5,max=5)
+
+        PI = 3.1415026
+        means = torch.clamp(actor_output[:,0:self.environment.get_action_size()], min=-PI, max=PI)
+        stds = torch.clamp(actor_output[:, self.environment.get_action_size():], min=-PI/20,max=PI/20)
+ 
+        # stds = log_stds.exp()
+        actor_output = torch.cat((means, stds),1)
+        
         if self.action_choice_output_columns is not None:
             actor_output = actor_output[:, self.action_choice_output_columns]
         action_distribution = create_actor_distribution(self.action_types, actor_output, self.action_size)
